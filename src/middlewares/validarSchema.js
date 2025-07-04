@@ -1,4 +1,6 @@
 const productoSchema = require('./schemas/productoSchema')
+const registroSchema = require('./schemas/registroSchema')
+const loginSchema = require('./schemas/loginSchema')
 
 const validarSchema = (schema, nombre) => (req,res,next) => {
     const { error } = schema.validate(req.body)
@@ -12,7 +14,11 @@ const validarSchema = (schema, nombre) => (req,res,next) => {
 }
 
 const validarProducto = validarSchema(productoSchema, 'producto')
+const validarRegistro = validarSchema(registroSchema, 'usuario')
+const validarLogin = validarSchema(loginSchema, 'usuario')
 
 module.exports = {
-    validarProducto
+    validarProducto,
+    validarRegistro,
+    validarLogin
 }
