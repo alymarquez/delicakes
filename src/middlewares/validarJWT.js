@@ -8,6 +8,7 @@ const validarJWT = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET || 'claveSecreta123');
+    console.log('Decoded JWT:', decoded);
     req.usuario = decoded;
     next();
   } catch (error) {

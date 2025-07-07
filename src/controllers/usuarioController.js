@@ -4,14 +4,14 @@ const jwt = require('jsonwebtoken')
 
 const registrarUsuario = async (req, res) => {
   try {
-    const { nombre, email, password } = req.body
+    const { nombre, email, password, rol } = req.body
 
     const existe = await Usuario.findOne({ where: { email } });
     if (existe) {
       return res.status(400).json({ message: 'El email ya está registrado'})
     }
 
-    const nuevoUsuario = await Usuario.create({ nombre, email, password })
+    const nuevoUsuario = await Usuario.create({ nombre, email, password, rol })
     res.status(201).json({ msg: 'Usuario creado', usuario: nuevoUsuario })
   } catch (error) {
     console.error('Error en registrarUsuario:', error)
@@ -21,31 +21,27 @@ const registrarUsuario = async (req, res) => {
 
 const loginUsuario = async (req, res) => {
   try {
-    const { email, password } = req.body
+    const { email, password, rol } = req.body
 
     const usuario = await Usuario.findOne({ where: { email } })
     if (!usuario) {
       return res.status(404).json({ message: "Usuario inexistente." })
     }
 
-    console.log('Contraseña guardada en DB:', usuario.password)
-    console.log('Contraseña enviada:', password)
-
     const passwordValido  = await bcrypt.compare(password, usuario.password)
-    console.log('Resultado bcrypt.compare:', passwordValido);
     if (!passwordValido) {
       return res.status(400).json({ msg: 'Contraseña incorrecta' })
     }
 
     const token = jwt.sign(
-      { id: usuario.id, nombre: usuario.nombre },
+      { id: usuario.id, nombre: usuario.nombre, email: usuario.email, rol: usuario.rol },
       process.env.JWT_SECRET || 'claveSecreta123',
       { expiresIn: '2h' }
-    );
+    )
 
-    res.json({ msg: 'Login correcto', token });
+    res.json({ msg: 'Login correcto', token })
   } catch (error) {
-    console.error('Error en loginUsuario:', error);
+    console.error('Error en loginUsuario:', error)
     res.status(500).json({ msg: 'Error en el servidor' })
   }
 };
