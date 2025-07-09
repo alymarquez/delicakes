@@ -16,10 +16,6 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
-      productos: {
-        type: Sequelize.JSON,
-        allowNull: false
-      },
       total: {
         type: Sequelize.FLOAT,
         allowNull: false
