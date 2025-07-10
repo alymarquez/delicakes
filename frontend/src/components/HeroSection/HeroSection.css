@@ -1,0 +1,55 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.hero {
+  background-image: url('../../assets/imagen5.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-color: #f8f0e3;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 70px;
+}
+
+.hero-content {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #c05a63;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero p {
+  margin-top: 1rem;
+  color: #555;
+}
+
+.btn-catalogo {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #c05a63;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-catalogo:hover {
+  background-color: #a74b52;
+}
