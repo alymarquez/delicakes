@@ -10,6 +10,8 @@ app.use('/usuarios', require('./src/routes/usuarioRoutes'));
 
 app.use('/pedidos', require('./src/routes/pedidoRoutes'));
 
+app.use('/categorias', require('./src/routes/categoriaRoutes'));
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`)
 });

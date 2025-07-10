@@ -5,11 +5,17 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Producto extends Model {
     static associate(models) {
-       Producto.belongsToMany(models.Pedido, {
+      Producto.belongsToMany(models.Pedido, {
         through: models.PedidoProducto,
         foreignKey: 'productoId',
         otherKey: 'pedidoId'
-      });
+      })
+
+      this.belongsToMany(models.Categoria, {
+        through: 'CategoriaProducto',
+        foreignKey: 'productoId',
+        hooks: true
+      })
     }
   }
   

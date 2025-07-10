@@ -1,4 +1,4 @@
-const {Producto, Usuario, Pedido} = require('../db/models')
+const {Producto, Usuario, Pedido, Categoria} = require('../db/models')
 
 const validarExistenciaId = (modelo, data = 'id', cuerpo, nombre) => async (req, res, next) => {
     try {
@@ -18,10 +18,17 @@ const validarExistenciaId = (modelo, data = 'id', cuerpo, nombre) => async (req,
 const existeProducto = validarExistenciaId(Producto, 'id', 'params', 'producto')
 const existeUsuario = validarExistenciaId(Usuario, 'id', 'params', 'usuario')
 const existePedido = validarExistenciaId(Pedido, 'id', 'params', 'pedido')
+const existeCategoria = validarExistenciaId(Categoria, 'id', 'params', 'categoria')
+
+const existeProductoAsociacion = validarExistenciaId(Producto, 'productoId', 'params', 'producto')
+const existeCategoriaAsociacion = validarExistenciaId(Categoria, 'categoriaId', 'params', 'categoria')
 
 
 module.exports = {
     existeProducto,
     existeUsuario,
-    existePedido
+    existePedido,
+    existeCategoria,
+    existeProductoAsociacion,
+    existeCategoriaAsociacion
 }
