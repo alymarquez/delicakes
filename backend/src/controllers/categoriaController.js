@@ -3,11 +3,7 @@ const {Producto, Categoria} = require('../db/models')
 const crearCategoria = async (req, res) => {
     try {
         const {nombre} = req.body
-        console.log('--- DEBUG Categoria ---');
-        console.log('Nombre de tabla esperado por el modelo Categoria:', Categoria.tableName);
-        console.log('Opciones del modelo Categoria:', Categoria.options);
-        console.log('--- FIN DEBUG Categoria ---');
-        
+
         const categoria = await Categoria.create({nombre})
 
         res.status(201).json({ msg: 'Categoria creada', categoria: categoria })
@@ -20,7 +16,8 @@ const crearCategoria = async (req, res) => {
 
 const obtenerCategorias = async (req, res) => {
     try {
-        
+        const categorias = await Categoria.findAll()
+        res.status(200).json(categorias)
     } catch (error) {
         
     }
@@ -29,7 +26,8 @@ const obtenerCategorias = async (req, res) => {
 
 const obtenerCategoria = async (req, res) => {
     try {
-        
+        const categoria = req.categoria
+        res.status(200).json(categoria)
     } catch (error) {
         
     }
@@ -37,17 +35,27 @@ const obtenerCategoria = async (req, res) => {
 
 const actualizarCategoria = async (req, res) => {
     try {
-        
+        const categoria = req.categoria
+        const { nombre } = req.body
+
+        categoria.nombre = nombre,
+
+        await categoria.save()
+        res.status(200).json(categoria)
     } catch (error) {
-        
+        console.error(error)
+        res.status(500).json({ error: 'Error al actualizar categoria' })
     }
 }
 
 const eliminarCategoria = async (req, res) => {
     try {
-        
+        const categoria = req.categoria
+        await categoria.destroy()
+        res.status(200).json({message: "Categoria eliminada"})
     } catch (error) {
-        
+        console.error(error)
+        res.status(500).json({ error: 'Error al eliminar categoria' })
     }
 }
 
