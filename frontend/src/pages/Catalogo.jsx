@@ -1,8 +1,11 @@
+import CardProducto from "../components/CardProducto/CardProducto"
 
 
 function Catalogo() {
   return (
-    <div>Catalogo</div>
+    <div>
+      <CardProducto />
+    </div>
   )
 }
 

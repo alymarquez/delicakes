@@ -7,24 +7,24 @@ function Home() {
   return (
     <div>
         <HeroSection/>
-        {/* Sección "Sobre Nosotros" - Imagen a la derecha */}
+
       <InfoSection
         imageSrc={aboutUsImage}
         title="Sobre Nosotros"
         description="En Delicakes, cada postre es una obra de arte. Nos dedicamos a crear pasteles y dulces artesanales con ingredientes de la más alta calidad, pasión por el detalle y un toque de elegancia. Nuestra misión es endulzar tus momentos especiales con creaciones únicas y memorables."
         buttonText="Conoce Más"
-        buttonLink="/nosotros" // Enlace a tu página "Sobre Nosotros"
-        imageOnRight={true} // La imagen estará a la derecha
+        buttonLink="/nosotros"
+        imageOnRight={true}
       />
 
-      {/* Sección "Bodas" - Imagen a la izquierda */}
+
       <InfoSection
         imageSrc={weddingsImage}
         title="Bodas: El Pastel de Tus Sueños"
         description="Haz de tu día especial un momento inolvidable con un pastel de bodas de Delicakes. Desde diseños clásicos hasta creaciones modernas y personalizadas, trabajamos contigo para que tu pastel sea tan único y hermoso como tu amor. Descubre nuestras opciones para ese gran día."
         buttonText="Ver Pasteles de Boda"
-        buttonLink="/productos/bodas" // Enlace a la categoría de productos de bodas
-        imageOnRight={false} // La imagen estará a la izquierda
+        buttonLink="/productos/bodas" 
+        imageOnRight={false}
       />
     </div>
   )
