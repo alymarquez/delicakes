@@ -2,9 +2,9 @@ const {Producto, Categoria} = require('../db/models')
 
 const crearCategoria = async (req, res) => {
     try {
-        const {nombre} = req.body
+        const {nombre, imagenUrl} = req.body
 
-        const categoria = await Categoria.create({nombre})
+        const categoria = await Categoria.create({nombre, imagenUrl})
 
         res.status(201).json({ msg: 'Categoria creada', categoria: categoria })
     } catch (error) {
@@ -19,26 +19,37 @@ const obtenerCategorias = async (req, res) => {
         const categorias = await Categoria.findAll()
         res.status(200).json(categorias)
     } catch (error) {
-        
+        console.error(error)
+        res.status(500).json({ error: 'Error al obtener categorias' })
     }
 }
 
 
 const obtenerCategoria = async (req, res) => {
     try {
-        const categoria = req.categoria
+        const {id} = req.params
+        const categoria = await Categoria.findByPk(id, {
+        include: [{
+            model: Producto,
+            as: 'Productos',
+            through: { attributes: [] }
+            }]
+        })
+
         res.status(200).json(categoria)
     } catch (error) {
-        
+        console.error(error)
+        res.status(500).json({ error: 'Error al obtener productos de categoria' })
     }
 }
 
 const actualizarCategoria = async (req, res) => {
     try {
         const categoria = req.categoria
-        const { nombre } = req.body
+        const { nombre, imagenUrl } = req.body
 
         categoria.nombre = nombre,
+        categoria.imagenUrl = imagenUrl
 
         await categoria.save()
         res.status(200).json(categoria)

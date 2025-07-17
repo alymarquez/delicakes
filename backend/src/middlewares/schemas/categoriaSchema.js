@@ -4,7 +4,11 @@ const categoriaSchema = Joi.object({
     nombre: Joi.string()
         .min(3)
         .max(150)
-        .required()
+        .required(),
+    
+    imagenUrl: Joi.string()
+        .uri()
+        .optional(),
 })
 
 
