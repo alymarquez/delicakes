@@ -1,17 +1,22 @@
 import { useEffect, useState } from 'react'
-import {obtenerProductos} from '../../services/productosApi'
+import { useParams, Link } from 'react-router-dom'
+import {obtenerCategoria} from '../../services/categoriasApi'
 import '../CardProducto/CardProducto.css'
 
 function CardProducto() {
+  const { categoriaId } = useParams()
   const [productos, setProductos] = useState([])
+  const [categoriaNombre, setCategoriaNombre] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   useEffect(() => {
     const fetchProductosData = async () => {
       try {
-        const data = await obtenerProductos()
-        setProductos(data)
+        const categoriaData = await obtenerCategoria(categoriaId)
+        setCategoriaNombre(categoriaData.nombre);
+        
+        setProductos(categoriaData.Productos)
       } catch (err) {
         setError('Error al cargar los productos. Inténtalo de nuevo más tarde.')
         console.error(err)
@@ -21,7 +26,7 @@ function CardProducto() {
     };
 
     fetchProductosData()
-  }, []);
+  }, [categoriaId]);
 
   if (loading) {
     return <div className="product-status">Cargando productos...</div>
@@ -32,25 +37,21 @@ function CardProducto() {
   }
 
   return (
-    <section className="product-list-section">
-      <h2 className="product-list-title">Nuestros Productos</h2>
-      <div className="product-grid">
-        {productos.map(producto => (
-          <div key={producto.id} className="product-card">
-            <div className="product-image-container">
-              <img src={producto.imagen} alt={producto.nombre} className="product-image" />
-            </div>
-            <div className="product-info">
-              <h4 className="product-name">{producto.nombre}</h4>
-              <p className="product-description">{producto.descripcion}</p>
-              <p className="product-price">${producto.precio}</p>
-              <button className="add-to-cart-btn">Añadir al Carrito</button>
-            </div>
+    <div className="catalogo-productos-container">
+      <h1>Productos de {categoriaNombre || 'la categoría'}</h1>
+      <Link to="/catalogo" className="back-button">Volver a Categorías</Link>
+      <div className="productos-grid">
+        {productos.map((producto) => (
+          <div key={producto.id} className="producto-card">
+            <img src={producto.imagen} alt={producto.nombre} className="producto-imagen" />
+            <h3 className="producto-nombre">{producto.nombre}</h3>
+            <p className="producto-descripcion">{producto.descripcion}</p>
+            <p className="producto-precio">${producto.precio}</p>
           </div>
         ))}
       </div>
-    </section>
-  );
+    </div>
+  )
 }
 
 export default CardProducto

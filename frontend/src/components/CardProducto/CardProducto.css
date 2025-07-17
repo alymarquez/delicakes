@@ -1,128 +1,149 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=IBM+Plex+Serif:ital,wght@0,400..700;1,400..700&display=swap');
-
-
-.product-list-section {
-  padding: 4rem 2rem;
-  background-color: #fcf8f5;
+.catalogo-productos-container {
   max-width: 1200px;
-  margin: 2rem auto;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 120px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
 }
 
-.product-list-title {
-  font: 3rem 'Playfair Display', serif;
+.catalogo-productos-container h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
   color: #c05a63;
-  text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
 
-.product-status {
-  text-align: center;
-  font: 1.2rem 'IBM Plex Serif', serif;
-  color: #555;
-  padding: 3rem;
+.back-button {
+  display: inline-block;
+  background-color: #fce4ec;
+  color: #c05a63;
+  padding: 0.7rem 1.5rem;
+  border: 1px solid #c05a63;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
 }
 
-.product-status.error {
-  color: #d9534f;
+.back-button:hover {
+  background-color: #c05a63;
+  color: #fff;
+  border-color: #c05a63;
 }
 
-
-.product-grid {
+.productos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   justify-content: center;
+  padding-top: 1rem;
 }
 
-
-.product-card {
+.producto-card {
   background-color: #fff;
+  border: 1px solid #eee;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,.08);
-  overflow: hidden;
-  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  justify-content: space-between;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.product-card:hover {
+.producto-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
-.product-image-container {
+.producto-imagen {
   width: 100%;
   height: 200px;
-  overflow: hidden;
-}
-
-.product-image {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  object-position: center;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
-.product-info {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.product-name {
-  font: 1.6rem 'Playfair Display', serif;
+.producto-nombre {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 1.5rem;
   color: #c05a63;
-  margin-bottom: .5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.product-description {
-  font: .95rem 'IBM Plex Serif', serif;
-  color: #666;
-  line-height: 1.4;
+.producto-descripcion {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #555;
   margin-bottom: 1rem;
   flex-grow: 1;
 }
 
-.product-price {
-  font: 600 1.2rem 'IBM Plex Serif', serif;
-  color: #333;
-  margin-top: .5rem;
-  margin-bottom: 1rem;
+.producto-precio {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #be313c;
+  margin-top: 0.5rem;
 }
 
-.add-to-cart-btn {
-  display: inline-block;
-  padding: .6rem 1.2rem;
-  background-color: #c05a63;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font: 500 .9rem 'IBM Plex Serif', serif; 
-  transition: background-color .3s ease, transform .2s ease;
-  align-self: flex-start;
+.product-status {
+  text-align: center;
+  padding: 5rem 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: #777;
 }
 
-.add-to-cart-btn:hover {
-  background-color: #a74b52;
-  transform: translateY(-2px);
+.product-status.error {
+  color: #d9534f;
+  font-weight: bold;
 }
 
-/* --- Responsive Design --- */
 @media (max-width: 768px) {
-  .product-list-section {
-    padding: 2rem 1rem;
-    margin: 1rem auto;
+  .catalogo-productos-container {
+    padding: 1.5rem;
+    padding-top: 120px;
   }
-  .product-list-title { font-size: 2.5rem; margin-bottom: 2rem; }
-  .product-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+
+  .catalogo-productos-container h1 {
+    font-size: 2.8rem;
+  }
+
+  .productos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .producto-imagen {
+    height: 180px;
+  }
 }
 
 @media (max-width: 480px) {
-  .product-grid { grid-template-columns: 1fr; }
+  .catalogo-productos-container {
+    padding: 1rem;
+    padding-top: 120px;
+  }
+
+  .catalogo-productos-container h1 {
+    font-size: 2.2rem;
+  }
+
+  .producto-nombre {
+    font-size: 1.3rem;
+  }
+
+  .producto-precio {
+    font-size: 1.1rem;
+  }
 }
