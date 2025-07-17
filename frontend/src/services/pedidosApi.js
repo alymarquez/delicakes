@@ -9,14 +9,14 @@ export const obtenerPedidos = async (token) => {
 }
 
 export const obtenerPedido = async (id, token) => {
-    return apiFetch(`pedidos${id}`, 'GET', { 'Authorization': `Bearer ${token}`})
+    return apiFetch(`pedidos/${id}`, 'GET', { 'Authorization': `Bearer ${token}`})
 }
 
 export const actualizarPedido = async (id, pedidoData, token) => {
-    return apiFetch(`pedidos${id}`, 'PUT', pedidoData, { 'Authorization': `Bearer ${token}`})
+    return apiFetch(`pedidos/${id}`, 'PUT', pedidoData, { 'Authorization': `Bearer ${token}`})
 }
 
 export const eliminarPedido = async (id, token) => {
-    return apiFetch(`pedidos${id}`, 'DELETE', { 'Authorization': `Bearer ${token}`})
+    return apiFetch(`pedidos/${id}`, 'DELETE', { 'Authorization': `Bearer ${token}`})
 }
 

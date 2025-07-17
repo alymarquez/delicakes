@@ -9,14 +9,14 @@ export const obtenerProductos = async () => {
 }
 
 export const obtenerProducto = async (id) => {
-    return apiFetch(`productos${id}`, 'GET')
+    return apiFetch(`productos/${id}`, 'GET')
 }
 
 export const actualizarProducto = async (id, productoData, token) => {
-    return apiFetch(`productos${id}`, 'PUT', productoData, { 'Authorization': `Bearer ${token}` })
+    return apiFetch(`productos/${id}`, 'PUT', productoData, { 'Authorization': `Bearer ${token}` })
 }
 
 export const eliminarProducto = async (id, token) => {
-    return apiFetch(`productos${id}`, 'DELETE', { 'Authorization': `Bearer ${token}` })
+    return apiFetch(`productos/${id}`, 'DELETE', { 'Authorization': `Bearer ${token}` })
 }
 

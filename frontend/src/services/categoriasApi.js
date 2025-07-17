@@ -9,13 +9,13 @@ export const obtenerCategorias = async () => {
 }
 
 export const obtenerCategoria = async (id) => {
-    return apiFetch(`categorias${id}`, 'GET')
+    return apiFetch(`categorias/${id}`, 'GET')
 }
 
 export const actualizarCategoria = async (id, categoriaData, token) => {
-    return apiFetch(`categorias${id}`, 'PUT', categoriaData, { 'Authorization': `Bearer ${token}`})
+    return apiFetch(`categorias/${id}`, 'PUT', categoriaData, { 'Authorization': `Bearer ${token}`})
 }
 
 export const eliminarCategoria = async (id, token) => {
-    return apiFetch(`categorias${id}`, 'DELETE', { 'Authorization': `Bearer ${token}`})
+    return apiFetch(`categorias/${id}`, 'DELETE', { 'Authorization': `Bearer ${token}`})
 }
