@@ -36,7 +36,8 @@ function Categoria() {
 
   return (
     <div className="catalogo-categorias-container">
-      <h1>Nuestras Categorías</h1>
+      <h1>Categorías</h1>
+      <div className="categoria-linea-titulo"></div>
       <div className="categorias-grid">
         {categorias.map((categoria) => (
           <Link to={`/catalogo/${categoria.id}/`} key={categoria.id} className="categoria-card">
