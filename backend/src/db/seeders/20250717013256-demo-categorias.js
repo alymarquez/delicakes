@@ -6,25 +6,25 @@ module.exports = {
     await queryInterface.bulkInsert('Categorias', [
       {
         nombre: 'Tortas',
-        imagenUrl: 'https://th.bing.com/th/id/R.8630a3cb567743ccdd3e1b36d6a45574?rik=U8uewWOF0tgbiQ&riu=http%3a%2f%2feltrebolsa.weebly.com%2fuploads%2f5%2f0%2f8%2f7%2f50870337%2f2255973_orig.jpg&ehk=GS315DBGUfXZz2Jla9teC2qBrfZmTY9zMuV%2fV9QjAw0%3d&risl=&pid=ImgRaw&r=0',
+        imagenUrl: 'https://th.bing.com/th/id/R.f3c15cbf2ca24bc0f1b96972f134a69f?rik=Rie0RJBV0Wyg%2bA&riu=http%3a%2f%2fpurepng.com%2fpublic%2fuploads%2flarge%2fpurepng.com-birthday-cakefood-chocolate-cake-sweet-tasty-birthday-eat-delicious-941524600851xxygd.png&ehk=XvR8TDH3gU72kZrRWcLBrvbACyp8QS52EdfKc0uVo5A%3d&risl=1&pid=ImgRaw&r=0',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         nombre: 'Cupcakes',
-        imagenUrl: 'https://tse4.mm.bing.net/th/id/OIP.jpXv233H4qVctC4-9-0OLwHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
+        imagenUrl: 'https://tse3.mm.bing.net/th/id/OIP.CzaIMtxtS_e5ma7yNBVW4QHaH_?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         nombre: 'Cookies',
-        imagenUrl: 'https://tse2.mm.bing.net/th/id/OIP.CphYaH68oiPzF00_p32LIgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
+        imagenUrl: 'https://tse2.mm.bing.net/th/id/OIP.2VSGw4QWVryscL2NILZV-gHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         nombre: 'Bodas',
-        imagenUrl: 'https://th.bing.com/th/id/R.678c06b26c89fe36b84af75cd121959a?rik=K9GztM0A9QWASQ&pid=ImgRaw&r=0',
+        imagenUrl: 'https://tse2.mm.bing.net/th/id/OIP.7KpXqii7wBofBmR3yHzBawAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
         createdAt: new Date(),
         updatedAt: new Date()
       }
