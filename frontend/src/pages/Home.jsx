@@ -2,6 +2,7 @@ import HeroSection from "../components/HeroSection/HeroSection"
 import InfoSection from "../components/InfoSection/InfoSection"
 import aboutUsImage from '../assets/imagen3.jpeg'
 import weddingsImage from '../assets/boda.jpg'
+import image from '../assets/imagen2.jpeg'
 
 function Home() {
   return (
@@ -17,14 +18,22 @@ function Home() {
         imageOnRight={true}
       />
 
-
       <InfoSection
         imageSrc={weddingsImage}
         title="Bodas: El Pastel de Tus Sueños"
-        description="Haz de tu día especial un momento inolvidable con un pastel de bodas de Delicakes. Desde diseños clásicos hasta creaciones modernas y personalizadas, trabajamos contigo para que tu pastel sea tan único y hermoso como tu amor. Descubre nuestras opciones para ese gran día."
+        description="Haz de tu día especial un momento inolvidable con un pastel de bodas de Delicakes. Desde diseños clásicos hasta modernos, trabajamos contigo para que tu pastel sea tan único y hermoso como tu amor. Descubre nuestras opciones para ese gran día."
         buttonText="Ver Pasteles de Boda"
-        buttonLink="/productos/bodas" 
+        buttonLink="/catalogo/4" 
         imageOnRight={false}
+      />
+
+      <InfoSection
+        imageSrc={image}
+        title="Personalización"
+        description="Contactanos para crear juntos lo que desees, creaciones creativas con un toque especial."
+        buttonText="Contactanos"
+        buttonLink="/contacto" 
+        imageOnRight={true}
       />
     </div>
   )

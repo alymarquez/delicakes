@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 body, html {
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .hero {
-  background-image: url('../../assets/imagen5.jpeg');
+  background-image: url('../../assets/ai.png');
   background-size: cover;
   background-position: center;
   background-color: #f8f0e3;
-  height: 75vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +23,7 @@ body, html {
 }
 
 .hero-content {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.778);
   padding: 2rem;
   border-radius: 12px;
   max-width: 500px;
@@ -30,12 +32,14 @@ body, html {
 .hero h2 {
   font-size: 2.5rem;
   color: #c05a63;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .hero p {
   margin-top: 1rem;
   color: #555;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
 }
 
 .btn-catalogo {
@@ -48,6 +52,7 @@ body, html {
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .btn-catalogo:hover {
