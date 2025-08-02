@@ -1,3 +1,6 @@
+require('dotenv').config()
+
+console.log('JWT_SECRET cargado:', process.env.JWT_SECRET);
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -10,6 +13,8 @@ app.use(cors())
 app.use('/productos', require('./src/routes/productosRoutes'));
 
 app.use('/usuarios', require('./src/routes/usuarioRoutes'));
+
+app.use('/pedidos', require('./src/routes/pedidoRoutes'));
 
 app.use('/pedidos', require('./src/routes/pedidoRoutes'));
 
