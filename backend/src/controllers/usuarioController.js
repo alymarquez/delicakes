@@ -32,14 +32,16 @@ const loginUsuario = async (req, res) => {
     if (!passwordValido) {
       return res.status(400).json({ msg: 'Contraseña incorrecta' })
     }
+    
+    console.log('Clave usada para firmar:', process.env.JWT_SECRET);
 
     const token = jwt.sign(
       { id: usuario.id, nombre: usuario.nombre, email: usuario.email, rol: usuario.rol },
-      process.env.JWT_SECRET || 'claveSecreta123',
+      process.env.JWT_SECRET,
       { expiresIn: '2h' }
     )
 
-    res.json({ msg: 'Login correcto', token })
+    res.json({ msg: 'Login correcto', token, usuario: { id: usuario.id, nombre: usuario.nombre, email: usuario.email, rol: usuario.rol } })
   } catch (error) {
     console.error('Error en loginUsuario:', error)
     res.status(500).json({ msg: 'Error en el servidor' })
