@@ -1,8 +1,12 @@
+import ComponenteCarrito from "../components/ComponenteCarrito/ComponenteCarrito"
 
 
 function Carrito() {
+
   return (
-    <div>Carrito</div>
+    <div>
+      <ComponenteCarrito />
+    </div>
   )
 }
 
