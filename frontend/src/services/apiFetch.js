@@ -15,6 +15,11 @@ export const apiFetch = async (endpoint, method = "GET", bodyData = null, custom
     config.body = JSON.stringify(bodyData);
   }
 
+  console.log('--- apiFetch ---');
+    console.log('URL:', url);
+    console.log('Method:', method);
+    console.log('Headers:', config.headers);
+    
   try {
     const res = await fetch(url, config)
     const data = await res.json()

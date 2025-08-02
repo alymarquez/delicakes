@@ -20,3 +20,24 @@ export const eliminarPedido = async (id, token) => {
     return apiFetch(`pedidos/${id}`, 'DELETE', { 'Authorization': `Bearer ${token}`})
 }
 
+
+// carrito
+export const obtenerCarrito = async (token) => {
+  return apiFetch('pedidos/carrito', 'GET', null, { 'Authorization': `Bearer ${token}` })
+}
+
+export const agregarProductoAlCarrito = async (data, token) => {
+    return apiFetch('pedidos/carrito', 'POST', data, { 'Authorization': `Bearer ${token}` })
+}
+
+export const eliminarProductoDelCarrito = async (productoId, token) => {
+  return apiFetch(`pedidos/carrito/${productoId}`, 'DELETE', null, { 'Authorization': `Bearer ${token}` })
+}
+
+export const finalizarCompra = async (token) => {
+  return apiFetch('pedidos/checkout', 'POST', null, { 'Authorization': `Bearer ${token}` })
+}
+
+export const disminuirProducto = async (data, token) => {
+    return apiFetch('pedidos/carrito/disminuir', 'PUT', data, { 'Authorization': `Bearer ${token}` })
+}
