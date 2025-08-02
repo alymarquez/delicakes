@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import {obtenerCategoria} from '../../services/categoriasApi'
 import '../CardProducto/CardProducto.css'
+import CardProductoIndividual from '../CardProductoIndividual/CardProductoIndividual'
+import { AuthContext } from '../../context/AuthContext';
 
 function CardProducto() {
   const { categoriaId } = useParams()
@@ -9,6 +11,7 @@ function CardProducto() {
   const [categoriaNombre, setCategoriaNombre] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const { authInfo } = useContext(AuthContext)
 
   useEffect(() => {
     const fetchProductosData = async () => {
@@ -17,6 +20,7 @@ function CardProducto() {
         setCategoriaNombre(categoriaData.nombre);
         
         setProductos(categoriaData.Productos)
+
       } catch (err) {
         setError('Error al cargar los productos. Inténtalo de nuevo más tarde.')
         console.error(err)
@@ -42,12 +46,11 @@ function CardProducto() {
       <Link to="/catalogo" className="back-button">Volver a Categorías</Link>
       <div className="productos-grid">
         {productos.map((producto) => (
-          <div key={producto.id} className="producto-card">
-            <img src={producto.imagen} alt={producto.nombre} className="producto-imagen" />
-            <h3 className="producto-nombre">{producto.nombre}</h3>
-            <p className="producto-descripcion">{producto.descripcion}</p>
-            <p className="producto-precio">${producto.precio}</p>
-          </div>
+          <CardProductoIndividual
+            key={producto.id} 
+            producto={producto} 
+            token={authInfo?.token || null} 
+          />
         ))}
       </div>
     </div>
