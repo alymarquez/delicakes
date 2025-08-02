@@ -4,16 +4,16 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  height: 100px;
   padding: 0.1rem 8.0rem;
   background-color: #fff0f5;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  margin: 0;
   width: 100%;
   z-index: 1000;
   box-sizing: border-box;
+  
 }
 
 .logo {

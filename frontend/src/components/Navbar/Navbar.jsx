@@ -11,6 +11,7 @@ function Navbar () {
             <li><Link to="/catalogo">Catálogo</Link></li>
             <li><Link to="/nosotros">Nosotros</Link></li>
             <li><Link to="/contacto">Contacto</Link></li>
+            <li><Link to="/login">Login</Link></li>
             <li><Link to="/carrito">🛒</Link></li>
         </ul>
         </nav>

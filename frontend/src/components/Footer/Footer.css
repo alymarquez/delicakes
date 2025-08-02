@@ -2,11 +2,13 @@
   background-color: #fff0f5;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
   font-size: 0.9rem;
   color: #444;
   width: 100%;
-  margin-top: auto;
+  /* margin-top: auto;
+  position: relative;
+  bottom: 0; */
+  height: 50px;
 }
 
 .redes a {
@@ -14,3 +16,4 @@
   text-decoration: none;
   margin: 0 0.5rem;
 }
+
