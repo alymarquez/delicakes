@@ -1,0 +1,157 @@
+
+.detalle-producto-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Times New Roman', serif; 
+  color: #333;
+}
+
+/* Estilo del botón "Volver" */
+.back-button {
+  display: inline-block;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  color: #777;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #000;
+}
+
+/* Layout principal de la tarjeta de producto */
+.detalle-producto-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* Imagen del producto */
+.detalle-producto-imagen {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Contenido del producto (nombre, descripción, etc.) */
+.detalle-producto-contenido {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detalle-producto-nombre {
+  font-size: 2.5rem;
+  font-weight: normal;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+.detalle-producto-descripcion {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Información adicional del producto (precio) */
+.detalle-producto-info {
+  font-size: 1.2rem;
+  color: #555;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
+
+.detalle-producto-precio {
+  font-weight: bold;
+}
+
+/* Contenedor de los botones de interacción */
+.contenedor-interaccion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Botones para aumentar/disminuir cantidad */
+.contenedor-botones-cantidad {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  width: 150px;
+}
+
+.boton-cantidad {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  color: #555;
+  transition: background-color 0.3s ease;
+}
+
+.boton-cantidad:hover {
+  background-color: #f5f5f5;
+}
+
+.cantidad-display {
+  padding: 0.5rem 1rem;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  width: 100%;
+  text-align: center;
+}
+
+/* Botón Agregar al carrito*/
+.boton-agregar {
+  background-color: #e09999;
+  color: #fff;
+  border: 1px solid #a17777;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton-agregar:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.boton-agregar:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Mensajes de feedback (éxito y error) */
+.mensaje-exito {
+  color: #4caf50;
+  font-size: 1rem;
+}
+
+.mensaje-error {
+  color: #f44336;
+  font-size: 1rem;
+}
+
+
+@media (min-width: 768px) {
+  .detalle-producto-card {
+    flex-direction: row;
+  }
+
+  .detalle-producto-imagen {
+    max-width: 50%;
+  }
+
+  .detalle-producto-contenido {
+    padding-left: 3rem;
+  }
+}

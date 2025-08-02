@@ -14,6 +14,7 @@ import Login from './components/Login/Login'
 
 import './App.css'
 import Carrito from './pages/Carrito';
+import DetalleProducto from './components/DetalleProducto/DetalleProducto';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/carrito" element={<Carrito/>} />
           <Route path="/login" element={<Login />} />
+          <Route path="/productos/:idProducto" element={<DetalleProducto/>} />
         </Routes>
       <Footer />
     </AuthProvider>
